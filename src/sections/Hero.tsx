@@ -1,16 +1,15 @@
 import type { MouseEvent as ReactMouseEvent } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
-import { ArrowDown, ArrowUpRight, MapPin } from 'lucide-react'
+import { ArrowDown, MapPin } from 'lucide-react'
 
 import { Terminal } from '../components/Terminal'
 import { profile } from '../data/profile'
-import { isValidHttpUrl, scrollToSection } from '../lib/utils'
+import { scrollToSection } from '../lib/utils'
 
 const TECH_LINE = 'C++ · DSA · Linux · Systems Programming · CUDA'
 
 export function HeroSection() {
   const reducedMotion = useReducedMotion()
-  const hasGithub = isValidHttpUrl(profile.githubUrl)
 
   const jumpTo = (id: string) => (event: ReactMouseEvent<HTMLAnchorElement>) => {
     event.preventDefault()
@@ -75,18 +74,6 @@ export function HeroSection() {
               <a href="#contact" className="btn btn-ghost" onClick={jumpTo('contact')}>
                 Get in touch
               </a>
-              {hasGithub ? (
-                <a
-                  href={profile.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn px-2 text-fg-muted transition-colors hover:text-fg"
-                  aria-label="Ramnath's GitHub profile (opens in a new tab)"
-                >
-                  GitHub
-                  <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-                </a>
-              ) : null}
             </motion.div>
 
             <motion.div

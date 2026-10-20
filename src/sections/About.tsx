@@ -17,7 +17,7 @@ export function AboutSection() {
                 title="Curious about what happens under the hood."
               />
 
-              <div className="mt-7 max-w-[62ch] space-y-5 text-[15px] leading-7 text-fg-muted">
+              <div className="mt-7 max-w-[62ch] space-y-5 text-justify text-[15px] leading-7 text-fg-muted">
                 <p>
                   I&rsquo;m a third-year Electrical Engineering student at Bharati Vidyapeeth&rsquo;s
                   College of Engineering, Delhi, building a strong foundation in software engineering

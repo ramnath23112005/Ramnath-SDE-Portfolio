@@ -15,7 +15,6 @@ export function ContactSection() {
               eyebrow="06 / Let's connect"
               title="Good engineering starts with curiosity."
               lead="I'm open to SDE internship opportunities, technical collaborations, and conversations with people building useful software and infrastructure."
-              leadClassName="whitespace-nowrap"
             />
 
             <p className="mt-6 max-w-2xl font-mono text-[12.5px] leading-relaxed text-fg-faint">
