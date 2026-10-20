@@ -105,6 +105,7 @@ const DONE_STATE: TerminalState = {
  */
 export function Terminal() {
   const containerRef = useRef<HTMLDivElement>(null)
+  const bodyRef = useRef<HTMLDivElement>(null)
   const inView = useInView(containerRef, { once: true, amount: 0.35 })
   const reducedMotion = useReducedMotion()
   const [state, setState] = useState<TerminalState>(INITIAL_STATE)
@@ -155,6 +156,11 @@ export function Terminal() {
     }
   }, [inView, reducedMotion])
 
+  // Keep the newest line (and the cursor) in view inside the fixed-height body.
+  useEffect(() => {
+    bodyRef.current?.scrollTo({ top: bodyRef.current.scrollHeight })
+  }, [state, reducedMotion])
+
   // Reduced-motion users get the finished transcript with no animation.
   const view = reducedMotion ? DONE_STATE : state
 
@@ -189,7 +195,8 @@ export function Terminal() {
       </div>
 
       <div
-        className="h-[340px] space-y-3 overflow-hidden p-3.5 font-mono text-[11.5px] leading-[1.65] sm:h-[320px] sm:space-y-3.5 sm:p-6 sm:text-[13px] lg:h-[300px]"
+        ref={bodyRef}
+        className="h-[340px] space-y-2.5 overflow-hidden p-3.5 font-mono text-[10.5px] leading-[1.55] sm:h-[320px] sm:space-y-3 sm:p-6 sm:text-[12px] lg:h-[300px]"
         aria-hidden="true"
       >
         {BLOCKS.slice(0, view.completed).map((block) => (
