@@ -26,7 +26,7 @@ export function HeroSection() {
     <section
       id="hero"
       aria-label="Introduction"
-      className="relative isolate overflow-hidden pb-16 pt-28 sm:pb-20 sm:pt-36 lg:pb-24 lg:pt-44"
+      className="relative isolate overflow-hidden pb-16 pt-28 sm:pb-20 sm:pt-36 lg:pb-16 lg:pt-32"
     >
       <div className="grid-lines pointer-events-none absolute inset-0 -z-10" aria-hidden="true" />
       <div

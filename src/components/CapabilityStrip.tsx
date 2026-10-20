@@ -24,17 +24,17 @@ export function CapabilityStrip() {
             return (
               <li
                 key={capability.label}
-                className={`bg-ink px-5 py-5 transition-colors duration-200 hover:bg-surface ${
+                className={`bg-ink px-4 py-3.5 transition-colors duration-200 hover:bg-surface lg:px-3 lg:py-3 ${
                   spansTwoOnSmall ? 'sm:col-span-2 lg:col-span-1' : ''
                 }`}
               >
-                <div className="flex items-center gap-2.5">
-                  <Icon className="h-4 w-4 shrink-0 text-accent" aria-hidden="true" />
-                  <span className="text-[13px] font-semibold leading-tight text-fg">
+                <div className="flex items-center gap-2">
+                  <Icon className="h-3.5 w-3.5 shrink-0 text-accent" aria-hidden="true" />
+                  <span className="text-[12.5px] font-semibold leading-tight text-fg lg:text-[12px]">
                     {capability.label}
                   </span>
                 </div>
-                <p className="mt-1.5 pl-6.5 font-mono text-[11px] leading-relaxed text-fg-faint">
+                <p className="mt-1 pl-5.5 font-mono text-[10.5px] leading-relaxed text-fg-faint lg:text-[10px]">
                   {capability.hint}
                 </p>
               </li>

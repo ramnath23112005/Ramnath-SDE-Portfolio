@@ -189,7 +189,7 @@ export function Terminal() {
       </div>
 
       <div
-        className="h-[340px] space-y-3 overflow-hidden p-3.5 font-mono text-[11.5px] leading-[1.65] sm:h-[320px] sm:space-y-3.5 sm:p-6 sm:text-[13px]"
+        className="h-[340px] space-y-3 overflow-hidden p-3.5 font-mono text-[11.5px] leading-[1.65] sm:h-[320px] sm:space-y-3.5 sm:p-6 sm:text-[13px] lg:h-[300px]"
         aria-hidden="true"
       >
         {BLOCKS.slice(0, view.completed).map((block) => (
