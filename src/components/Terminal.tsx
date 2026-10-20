@@ -160,7 +160,7 @@ export function Terminal() {
 
   const renderOutputs = (block: CommandBlock) =>
     block.outputs.map((row, rowIndex) => (
-      <div key={rowIndex} className="pl-1">
+      <div key={rowIndex} className="break-words pl-1">
         {row.map((part, partIndex) => (
           <span key={partIndex} className={TONE_CLASSES[part.tone]}>
             {part.text}
@@ -189,7 +189,7 @@ export function Terminal() {
       </div>
 
       <div
-        className="h-[280px] space-y-3.5 overflow-hidden p-4 font-mono text-[12.5px] leading-[1.65] sm:h-[320px] sm:p-6 sm:text-[13px]"
+        className="h-[340px] space-y-3 overflow-hidden p-3.5 font-mono text-[11.5px] leading-[1.65] sm:h-[320px] sm:space-y-3.5 sm:p-6 sm:text-[13px]"
         aria-hidden="true"
       >
         {BLOCKS.slice(0, view.completed).map((block) => (
